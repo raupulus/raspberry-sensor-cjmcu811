@@ -43,16 +43,18 @@
 
 from time import sleep
 from CJMCU811 import CJMCU811
-#from CJMCU811_eco2 import CJMCU811_eco2
-#from CJMCU811_tvoc import CJMCU811_tvoc
+from CJMCU811_eco2 import CJMCU811_eco2
+from CJMCU811_tvoc import CJMCU811_tvoc
 
 cjmcu811 = CJMCU811()
-#cjmcu811_eco2 = CJMCU811_eco2()
-#cjmcu811_tvoc = CJMCU811_tvoc()
+cjmcu811_eco2 = CJMCU811_eco2()
+cjmcu811_tvoc = CJMCU811_tvoc()
 
 # Variables para simular variación de humedad y temperatura.
 humidity = 60 #int
 temperature = 25.0 #float
+
+sleep(2)
 
 while True:
     try:
@@ -61,11 +63,12 @@ while True:
         cjmcu811.debug()
         sleep(3)
         print('')
-        # print('Debug de cada Clase Hija')
-        # cjmcu811_eco2.debug()
-        # cjmcu811_tvoc.debug()
-        # sleep(3)
-        # print('')
+        print('Debug de cada Clase Hija')
+        cjmcu811_eco2.debug()
+        sleep(3)
+        cjmcu811_tvoc.debug()
+        sleep(3)
+        print('')
     except:
         print('>>>>>>>>>>>> | <<<<<<<<<<<<')
         print('Ha ocurrido un error y se reiniciará el sensor')

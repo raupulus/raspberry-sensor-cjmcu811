@@ -57,10 +57,12 @@ class CJMCU811(AbstractModel):
     table_name = 'table_co2'
     sensor = None
 
-    def __init__(self):
+    def __init__(self, mode=None):
         i2c = busio.I2C(board.SCL, board.SDA)
         self.sensor = adafruit_ccs811.CCS811(i2c)
-        #self.sensor.drive_mode(mode)
+
+        if mode:
+            self.sensor.drive_mode(mode)
 
     def get_eco2(self):
         """
@@ -125,7 +127,7 @@ class CJMCU811(AbstractModel):
         }
 
     def debug(self):
-        #print('DRIVE_MODE:', self.sensor.drive_mode)
+        print('DRIVE_MODE:', self.sensor.drive_mode)
         print('eco2: ', self.get_eco2(), 'PPM')
         print('tvoc: ', self.get_tvoc(), 'PPB')
         print('----------------- - -----------------')

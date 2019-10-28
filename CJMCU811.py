@@ -64,21 +64,23 @@ class CJMCU811(AbstractModel):
         if mode:
             self.sensor.drive_mode(mode)
 
-    def get_eco2(self):
+    def get_eco2 (self):
         """
-        Obtiene las partículas de CO2.
+        Obtiene las partículas de CO2, puede medir máximo 8192ppm.
         :return: Devuelve las partículas de CO2.
         """
         value = self.sensor.eco2
-        return value if value >= 0.0 else 0.0
+        value = float(value if value is not None else 0)
+        return value if 400.0 <= value <= 8192.0 else 400.0
 
-    def get_tvoc(self):
+    def get_tvoc (self):
         """
-        Obtiene las partículas de TVOC.
+        Obtiene las partículas de TVOC, puede medir máximo 1187ppb.
         :return: Devuelve las partículas de TVOC.
         """
         value = self.sensor.tvoc
-        return value if value >= 0.0 else 0.0
+        value = float(value if value is not None else 0)
+        return value if 0.0 <= value <= 1187.0 else 0.0
 
     def get_all_datas(self):
         """

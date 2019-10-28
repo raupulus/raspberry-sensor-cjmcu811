@@ -38,6 +38,7 @@
 # Clase que extiende de VEML6075 para representar el modelo del sensor solo
 # para la parte de TVOC.
 import datetime
+from time import sleep
 
 from CJMCU811 import CJMCU811
 
@@ -50,6 +51,8 @@ class CJMCU811_tvoc(CJMCU811):
         Devuelve un diccionario con los datos (coincidiendo con el tablemodel)
         según lo tomado con el sensor.
         """
+        sleep(1)
+
         return {
             'value': self.get_tvoc(),
         }

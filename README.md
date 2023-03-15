@@ -4,7 +4,7 @@ Clase para integrar el sensor CJMCU-811 con python en aplicaciones fácilmente c
 Mide:
 
 Este repositorio se encuentra disponible aquí:
-https://gitlab.com/fryntiz/raspberry-sensor-cjmcu-811.git
+https://gitlab.com/raupulus/raspberry-sensor-cjmcu-811.git
 
 Repositorio con modelo y ejemplos para el sensor VEML6075 que obtiene valores
 CO2/TVOC del aire en el ambiente:
@@ -21,14 +21,14 @@ añadiendo otras características que he visto necesarias en mi caso.
 
 La clase CJMCU811 puede funcionar de forma autónoma, aún así también es
 extendida por clases hijas para seccionar el tipo de resultado obtenido y
-tratarse de forma independiente en aplicaciones que lo implementen. 
+tratarse de forma independiente en aplicaciones que lo implementen.
 Por lo tanto puedes usar dicha clase ignorando las clases hijas o puedes
 usarlas en conjunto.
 
 ## Cuidado
 
 En algunos lugares indica que no se lleva bien en el bus con otros i2c,
-personalmente he tenido algunos problemas con varios sensores a la vez y lo he 
+personalmente he tenido algunos problemas con varios sensores a la vez y lo he
 solucionado capturando la excepción y esperando unos minutos para reinicializar
 (en el peor de los casos solo han sido 3-5 veces al día trabajando de forma
 seguida tomando lecturas cada 40 segundos)
@@ -38,7 +38,7 @@ trabajar 48h antes de tener datos fiables cuando el sensor es reciente.
 
 ## Dependencias
 
-Los entornos donde han sido probados satisfactoriamente utilizaban las 
+Los entornos donde han sido probados satisfactoriamente utilizaban las
 siguientes versiones de las aplicaciones necesarias:
 
 - python 3.7.3
@@ -93,7 +93,7 @@ de 4 - 5 ppm    Soportable durante unos 30 minutos, aumento del malestar, lagrim
 de 10 - 20 ppm  A los pocos minutos de exposición se experimenta un lagrimeo excesivo (que puede perdurar hasta una hora después de la exposición), sensación de asfixia inmediata, tos, escozor intenso en la garganta, la nariz y los ojos
 30 ppm  ¡Edema pulmonar tóxico, neumonía, peligro de muerte!
 
-## Sensibilidad a gases 
+## Sensibilidad a gases
 
 - Alklanet (contains 2-butoxyethanol), very sensitive to this stuff, we use it everywhere in the space to clean working surfaces
 - permanent marker: very sensitive to it

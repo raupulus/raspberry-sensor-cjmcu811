@@ -4,7 +4,8 @@ Clase para integrar el sensor CJMCU-811 con python en aplicaciones fácilmente c
 Mide:
 
 Este repositorio se encuentra disponible aquí:
-https://gitlab.com/raupulus/raspberry-sensor-cjmcu-811.git
+
+https://gitlab.com/raupulus/raspberry-sensor-cjmcu811.git
 
 Repositorio con modelo y ejemplos para el sensor VEML6075 que obtiene valores
 CO2/TVOC del aire en el ambiente:
@@ -67,8 +68,11 @@ manualmente desde el enlace indicado al comienzo de este documento.
 ## Links interesantes relacionados
 
 https://revspace.nl/CJMCU-811
+
 https://www.openhacks.com/uploadsproductos/ccs811_ds000459_4-00.pdf
+
 https://github.com/adafruit/Adafruit_CircuitPython_CCS811
+
 https://blog.jokielowie.com/en/2017/12/niedlugo-pomiar-jakosci-powietrza-bosch-bme680-oraz-ccs811-iaq-tvoc/
 
 ## Unidades de medida
